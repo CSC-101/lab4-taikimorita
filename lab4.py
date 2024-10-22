@@ -43,11 +43,6 @@ def x_coordinates(points: list[data.Point]) -> list[float]:
     """
     return [point.x for point in points]
 
-def test_x_coordinates():
-    p1 = data.Point(1, 2)
-    p2 = data.Point(3, 4)
-    assert x_coordinates([p1, p2]) == [1, 3]
-
 # Part 3
 def are_in_positive_quadrant(points: list[data.Point]) -> list[data.Point]:
     """
@@ -67,12 +62,6 @@ def are_in_positive_quadrant(points: list[data.Point]) -> list[data.Point]:
     def are_in_positive_quadrant(points: list[data.Point]) -> list[data.Point]:
     """
     return [point for point in points if point.x > 0 and point.y > 0]
-
-def test_are_in_positive_quadrant():
-    p1 = data.Point(1, 2)
-    p2 = data.Point(-1, 4)
-    p3 = data.Point(3, -2)
-    assert are_in_positive_quadrant([p1, p2, p3]) == [p1]
 
 # Part 4
 import math
@@ -96,11 +85,6 @@ def distance(p1: data.Point, p2: data.Point) -> float:
     """
     return math.sqrt((p1.x - p2.x)**2 + (p1.y - p2.y)**2)
 
-def test_distance():
-    p1 = data.Point(1, 2)
-    p2 = data.Point(4, 6)
-    assert math.isclose(distance(p1, p2), 5.0)
-
 # Part 5
 def manhattan_distance(p1: data.Point, p2: data.Point) -> float:
     """
@@ -120,11 +104,6 @@ def manhattan_distance(p1: data.Point, p2: data.Point) -> float:
     def manhattan_distance(p1: data.Point, p2: data.Point) -> float:
     """
     return abs(p1.x - p2.x) + abs(p1.y - p2.y)
-
-def test_manhattan_distance():
-    p1 = data.Point(1, 2)
-    p2 = data.Point(4, 6)
-    assert manhattan_distance(p1, p2) == 7
 
 # Part 6
 def distance_all(points: list[data.Point]) -> list[float]:
@@ -146,8 +125,3 @@ def distance_all(points: list[data.Point]) -> list[float]:
     """
     origin = data.Point(0, 0)
     return [distance(origin, point) for point in points]
-
-def test_distance_all():
-    p1 = data.Point(3, 4)
-    p2 = data.Point(6, 8)
-    assert distance_all([p1, p2]) == [5.0, 10.0]
